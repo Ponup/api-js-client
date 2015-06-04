@@ -1,0 +1,23 @@
+{
+  "name": "ponup-api-js",
+  "version": "0.0.0",
+  "authors": [
+    "dev@ponup.com"
+  ],
+  "description": "JavaScript client for the Ponup API",
+  "main": "api.js",
+  "keywords": [
+    "ponup",
+    "game",
+    "api"
+  ],
+  "license": "MIT",
+  "homepage": "http://ponup.com/api.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
