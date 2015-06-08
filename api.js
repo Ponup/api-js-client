@@ -1,9 +1,19 @@
+
 define( [ 'jquery' ], function( $ ) {
 
 	function Api() {
+		this.baseUrl = 'http://api.ponup.com';
 	}
 
-	Api.saveScore = function( gameName, score ) {
+	Api.prototype.getBaseUrl = function() {
+		return this.baseUrl;
+	};
+
+	Api.prototype.setBaseUrl = function( baseUrl ) {
+		this.baseUrl = baseUrl;
+	};
+
+	Api.prototype.saveScore = function( gameName, score ) {
 		var params = {
 			'game_name': gameName,
 			'game_level_number': score.game_level_number,
@@ -12,23 +22,23 @@ define( [ 'jquery' ], function( $ ) {
 		};
 		$.ajax({
 			type: 'POST',
-			url: 'http://api.ponup.com/score/add',
+			url: this.getBaseUrl() + '/score/add',
 			data: params
 		});
 	};
 
-	Api.retrieveScores = function( gameName, limit, callback ) {
+	Api.prototype.retrieveScores = function( gameName, limit, callback ) {
 		var params = {
 			'game_name': gameName,
 			'limit': limit
 		};
 		$.ajax({
-			url: 'http://api.ponup.com/score/list',
+			url: this.getBaseUrl() + '/score/list',
 			data: params,
 			success: callback
 		});
 	};
 
 	return Api;
-
 } );
+

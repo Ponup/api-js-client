@@ -1,6 +1,6 @@
 {
   "name": "ponup-api-js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "authors": [
     "dev@ponup.com"
   ],
@@ -19,5 +19,13 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "qunit": "~1.18.0",
+    "qunit-phantomjs-runner": "~2.1.0",
+    "requirejs": "~2.1.18"
+  },
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
 }
