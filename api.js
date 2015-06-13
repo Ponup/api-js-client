@@ -13,6 +13,13 @@ define( [ 'jquery' ], function( $ ) {
 		this.baseUrl = baseUrl;
 	};
 
+	Api.prototype.retrieveGames = function( callback ) {
+		$.ajax({
+			url: this.getBaseUrl() + '/game/list',
+			success: callback
+		});
+	};
+
 	Api.prototype.saveScore = function( gameName, score ) {
 		var params = {
 			'game_name': gameName,
